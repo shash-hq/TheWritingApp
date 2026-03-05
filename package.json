@@ -1,0 +1,25 @@
+{
+  "name": "thewritingapp",
+  "version": "1.0.0",
+  "description": "TBA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shash-hq/TheWritingApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shash-hq/TheWritingApp/issues"
+  },
+  "homepage": "https://github.com/shash-hq/TheWritingApp#readme",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
