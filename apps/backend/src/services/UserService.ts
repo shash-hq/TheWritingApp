@@ -1,5 +1,5 @@
 import { User } from '../models/User.js';
-import { hashPassword, comparePassword, generateToken } from '../utils/auth.js';
+import { hashPassword, comparePassword } from '../utils/auth.js';
 
 export class UserService {
     static async registerUser(data: { username: string; email: string; password: string }) {
@@ -16,11 +16,9 @@ export class UserService {
         });
 
         await user.save();
-        const token = generateToken(user._id.toString());
 
         return {
-            user: { id: user._id, username: user.username, email: user.email },
-            token
+            user: { id: user._id.toString(), username: user.username, email: user.email },
         };
     }
 
@@ -31,11 +29,8 @@ export class UserService {
         const isValid = await comparePassword(data.password, user.passwordHash);
         if (!isValid) throw new Error('Invalid credentials');
 
-        const token = generateToken(user._id.toString());
-
         return {
-            user: { id: user._id, username: user.username, email: user.email },
-            token
+            user: { id: user._id.toString(), username: user.username, email: user.email },
         };
     }
 }
