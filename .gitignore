@@ -97,3 +97,8 @@ Thumbs.db
 
 # Turborepo
 .turbo
+
+# AI tooling
+.agents/
+.gemini/
+CLAUDE.md
